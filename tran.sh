@@ -6,5 +6,5 @@ python -m torch.distributed.run  \
   --cfg=configs/transnet/transnet_tiny_64.yaml \
   --batch_size=64 \
   --epoch=300 \
-  --tag=ADNet \
+  --tag=TransNet \
   --gpu=0,1
