@@ -19,8 +19,8 @@ The paper is currently under review in IEEE Transactions on Image Processing.
 <tbody>
   <tr>
     <td class="tg-7btt">ckpt</td>
-    <td class="tg-0pky"><a href="https://drive.google.com/drive/folders/1mZUxvYrplhZapgq27XDQM6Fcg8-VYIP8">cket_best</a></td>
-    <td class="tg-0pky"><a href="https://drive.google.com/drive/folders/1yTVGOfp_j31QnKamtdk1E2jU8JXXvKwm">ckpt_best</a></td>
+    <td class="tg-0pky"><a href="https://drive.google.com/file/d/1e9FHpdcNtRImpHdTi00MfRpxB2Ine6lV/view?usp=drive_link">cket_best</a></td>
+    <td class="tg-0pky"><a href="https://drive.google.com/file/d/1sxYWKas_wlcH84lCFnUdUhs6IaHRAiYW/view?usp=drive_link">ckpt_best</a></td>
   </tr>
 </tbody>
 </table>
