@@ -18,7 +18,7 @@ The paper is currently under review in IEEE Transactions on Image Processing.
 </thead>
 <tbody>
   <tr>
-    <td class="tg-7btt">ckpt</td>
+    <td class="tg-7btt">SNR=0.5</td>
     <td class="tg-0pky"><a href="https://drive.google.com/file/d/1e9FHpdcNtRImpHdTi00MfRpxB2Ine6lV/view?usp=drive_link">cket_best</a></td>
     <td class="tg-0pky"><a href="https://drive.google.com/file/d/1sxYWKas_wlcH84lCFnUdUhs6IaHRAiYW/view?usp=drive_link">ckpt_best</a></td>
   </tr>
