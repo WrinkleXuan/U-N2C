@@ -3,10 +3,9 @@ python -m torch.distributed.run  \
   --nnodes=1 \
   --master_port 29501 \
   main.py \
-  --cfg=output/transnet_tiny_64/ADNet2025-02-19-03-15-18/config.yaml \
+  --cfg=output/convnet_64_2_4/gaussion_noise_0.5/config.yaml \
   --batch_size=512 \
-  --resume=output/transnet_tiny_64/ADNet2025-02-19-03-15-18/ckpt_best.pth \
-  --tag=ADNet \
+  --resume=output/convnet_64_2_4/gaussion_noise_0.5/ckpt_best.pth \
   --eval \
   --throughput \
   --gpu=2 \
