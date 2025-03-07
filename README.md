@@ -11,7 +11,7 @@ The paper is currently under review at IEEE Transactions on Image Processing.
 ## Training
 sh train.sh
 
-##Inference
+## Inference
 sh test.sh 
 
 
