@@ -9,10 +9,10 @@ The paper is currently under review at IEEE Transactions on Image Processing.
 
 
 ## Training
-sh train.sh
+    sh train.sh
 
 ## Inference
-sh test.sh 
+    sh test.sh 
 
 
 ## Requirments
