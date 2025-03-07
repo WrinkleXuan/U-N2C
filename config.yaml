@@ -1,0 +1,136 @@
+BASE:
+- ''
+DATA:
+  AUX_CLEAN_DATA_NAME:
+  - calibrations_10.npz
+  - calibrations_11.npz
+  AUX_NOISY_DATA_NAME:
+  - calibrations_8.npz
+  - calibrations_9.npz
+  BATCH_SIZE: 512
+  DATASET: OpenMPIData
+  DATA_NAME_TEST: calibrations_6.npz
+  DATA_NAME_TRAIN: calibrations_7.npz
+  DATA_NAME_VAL: calibrations_5.npz
+  DATA_PATH: /data/zwx/data/OpenMPIData/SM_Denoising
+  IMG_SIZE: 32
+  NOISE:
+    ADD_NOISE: true
+    ALPHA: 2.0
+    NOISE_TYPE: gaussion_noise
+    SNR: 0.5
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+FINETUNE: false
+LOCAL_RANK: 0
+METRICS:
+- psnr
+- nrmse
+- sbrc
+- nrmse_reco
+- psnr_reco
+- ssim
+MODE: train
+MODEL:
+  ConvNet:
+    BASE_CH: 64
+    DOWN_NORM: instance
+    INPUT_CH: 2
+    MOVING_AVERAGE_RATE: 0.999
+    NUM_DOWN: 2
+    NUM_RESIDUAL: 4
+    RES_NORM: instance
+    UP_NORM: layer
+  DISCRIMINIATOR:
+    EMBED_DIM: 96
+    IN_CHANS: 2
+    NLAYERS: 2
+    NORM_LAYER: instance
+  DROP_PATH_RATE: 0.1
+  DROP_RATE: 0.0
+  DTYPE: Discriminator
+  MTYPE: PatternNet
+  NAME: convnet_64_2_4
+  NUMS_NOSIE_MODE: 128
+  NUMS_PATTERN_MODE: 128
+  PATTERN_MEMORY:
+    MOVING_AVERAGE_RATE: 0.999
+    THRESHOLD: 0.5
+  RESUME: ''
+  TYPE: ConvNet
+OUTPUT: output/convnet_64_2_4/ADNet_gaussion_noise_0.5
+OUTPUT_TRAIN_LOG: output/convnet_64_2_4/ADNet_gaussion_noise_0.5/train_log
+OUTPUT_VAL_LOG: output/convnet_64_2_4/ADNet_gaussion_noise_0.5/val_log
+PRINT_FREQ: 1
+SAVE_FREQ: 10
+SEED: 2024
+TAG: ADNet
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 1
+  AUTO_RESUME: false
+  BASE_LR: 0.002
+  CLIP_GRAD: null
+  EPOCHS: 300
+  LOSS:
+    CC:
+    - l2
+    - 1.0
+    CONTRASTIVE:
+    - contrastive
+    - 1.0
+    DH:
+    - dh
+    - 1.0
+    DL:
+    - dl
+    - 1.0
+    GAN_TYPE: lsgan
+    HH:
+    - l1
+    - 1.0
+    HL:
+    - l1
+    - 1.0
+    HLH:
+    - l1
+    - 1.0
+    IDENTITY:
+    - l2
+    - 1.0
+    LH:
+    - l1
+    - 1.0
+    LHL:
+    - perceptual
+    - 1.0
+    LL:
+    - l1
+    - 0.0
+    NE:
+    - nll
+    - 1.0
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    GAMMA: 0.1
+    MULTISTEPS: []
+    NAME: cosine
+    WARMUP_PREFIX: true
+  MIN_LR: 2.0e-05
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 2.0e-06
+  WEIGHT_DECAY: 0.05
+VAL_FREQ: 5
+VISUAL:
+  COMPUTATION_GRAPH: false
+  FREQ: 50
+  NAME: visual
