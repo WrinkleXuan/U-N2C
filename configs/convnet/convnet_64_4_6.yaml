@@ -1,0 +1,15 @@
+MODEL:
+  TYPE: ConvNet
+  NAME: convnet_64_4_6
+  ConvNet:
+    BASE_CH: 64
+    NUM_DOWN: 3
+    NUM_RESIDUAL: 6
+    RES_NORM: 'instance'
+    DOWN_NORM: 'instance'
+    UP_NORM: 'layer'
+  DISCRIMINIATOR:
+    IN_CHANS: 2
+    EMBED_DIM: 96
+    NLAYERS: 2
+    NORM_LAYER: 'instance'
